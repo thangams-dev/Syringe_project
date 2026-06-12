@@ -1,0 +1,3 @@
+/home/thanga-inc-5829/Documents/Syringr_project/build/CMakeFiles/test_pump.dir
+/home/thanga-inc-5829/Documents/Syringr_project/build/CMakeFiles/edit_cache.dir
+/home/thanga-inc-5829/Documents/Syringr_project/build/CMakeFiles/rebuild_cache.dir
