@@ -1,0 +1,47 @@
+#include <zephyr/dt-bindings/gpio/gpio.h>
+
+/ {
+	aliases {
+		led0 = &led0_node;
+		sw1 = &sw1_node;
+		sw2 = &sw2_node;
+		bu = &bu_node;
+		st1 = &st1_node;
+		dir1 = &dir1_node;
+		enab1 = &enab1_node;
+	};
+
+	myoutputs {
+		compatible = "gpio-leds";
+		led0_node: led {
+			gpios = <&gpiob 11 GPIO_ACTIVE_HIGH>;
+		};
+		bu_node: buz {
+			gpios = <&gpiob 12 GPIO_ACTIVE_HIGH>;
+		};
+		st1_node: step {
+			gpios = <&gpiob 13 GPIO_ACTIVE_HIGH>;
+		};
+		dir1_node: direction {
+			gpios = <&gpiob 14 GPIO_ACTIVE_HIGH>;
+		};
+		enab1_node: enable {
+			gpios = <&gpiob 15 GPIO_ACTIVE_HIGH>;
+		};
+	};
+
+	my_inputs {
+		compatible = "gpio-keys";
+		sw1_node: switch1 {
+			gpios = <&gpioc 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+		};
+		sw2_node: switch2 {
+			gpios = <&gpioc 9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+		};
+	};
+};
+
+&usart1 {
+	status = "okay";
+	current-speed = <115200>;
+};

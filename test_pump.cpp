@@ -1,5 +1,7 @@
-#include "machine_state.hpp"
+
 #include <gtest/gtest.h>
+#include "pump_state_machine.hpp"
+#include "volume_tracker.hpp"
 class pumptest : public testing::Test{
     protected:
     AlarmManager alarm;
@@ -69,7 +71,7 @@ TEST_F(pumptest, wrongcmd){
     command.parse("wer");
     EXPECT_EQ(pump.currentState, &pump.idlestate);
 }
-int main(int argc, char** argv) {
+int main(int argc, char** argv) {   
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
 }
